@@ -1,0 +1,72 @@
+.container {
+  position: relative;
+  max-width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    290deg,
+    #151b1d -29.09%,
+    #15181b 51.77%,
+    #0e111f 129.35%
+  );
+  padding: 4rem;
+
+  .title {
+    display: flex;
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .deviceName {
+      margin-left: 4vh;
+      opacity: 0.5;
+    }
+  }
+
+  .optionsContainer {
+    display: grid;
+    gap: 3vh;
+    grid-template-columns: repeat(auto-fill, 20vw);
+
+    & > button {
+      color: white;
+      border: 0;
+      background: rgba(58, 58, 58, 0.5);
+
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 5vh;
+        font-weight: 700;
+        color: #ddd;
+        white-space: nowrap;
+        width: 100%;
+        text-align: left;
+        overflow: hidden;
+      }
+      p {
+        font-size: 2vh;
+        width: 100%;
+        text-align: left;
+      }
+
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 1vh;
+
+      padding: 3vh;
+
+      transition-duration: 0.15s;
+
+      outline: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        transform: scale(1.05);
+        //box-shadow: 0 0 0.2rem 0.2rem rgba(201, 201, 201, 0.2);
+      }
+    }
+  }
+}

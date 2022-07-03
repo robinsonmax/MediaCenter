@@ -1,20 +1,25 @@
+import { useState } from 'react';
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-
-const Hello = () => {
-  return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
-  );
-};
+import './App.scss';
+import Welcome from './components/Welcome';
+import Home from './pages/Home';
 
 export default function App() {
+
+  const [welcomed, setWelcomed] = useState<boolean>(false);
+
+  window.setTimeout(() => {
+    setWelcomed(true)
+  }, 3500)
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
-    </Router>
+    <>
+      {!welcomed ? <Welcome /> : <></>}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
